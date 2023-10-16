@@ -1,18 +1,22 @@
 <configuration>
     <property>
         <name>fs.s3a.access.key</name>
-        <value>[YOUR_ACCESS_KEY]</value>
+        <value>AKIAIOSFOLKFSSAMPLES</value>
     </property>
     <property>
     <name>fs.s3a.secret.key</name>
-    <value>[YOUR_SECRET_KEY]</value>
+    <value>wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY</value>
     </property>
     <property>
         <name>fs.s3a.path.style.access</name>
         <value>true</value>
     </property>
-    <!--    <property>-->
-    <!--        <name>fs.s3a.endpoint</name>-->
-    <!--        <value>[WANTED_ENDPOINT]</value>-->
-    <!--    </property>-->
+       <property>
+           <name>fs.s3a.endpoint</name>
+        <value>http://192.168.120.181:8000</value>
+   </property> 
+       <property>
+        <name>fs.s3a.connection.ssl.enabled</name>
+        <value>false</value>
+    </property>
 </configuration>

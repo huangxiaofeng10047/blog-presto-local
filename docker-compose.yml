@@ -20,3 +20,5 @@ services:
       DB_URI: mariadb:3306
     depends_on:
       - mariadb
+       
+    
