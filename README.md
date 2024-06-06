@@ -79,7 +79,30 @@ presto:default> select product_title,review_headline, total_votes from amazon_re
 
 insert into amazon_reviews_parquet select 'test1','test2','test3','test4','test5','test6',1,2,3,'test1','test2','test3','test4',1,2023,'ac'
 
-
+create schema s3.hive_storage with (location = 's3a://warehouse/');
 CREATE TABLE s3.hive_storage.sample_table (
    col1 varchar, 
    col2 varchar);
+insert into s3.hive_storage.sample_table select 'value1', 'value2';
+
+   报错
+   ```
+   uery 20231016_074151_00035_88qmq failed: Unable to execute HTTP request: The target server failed to respond
+   ```
+   重启presto即可
+
+
+2.1、hive读取minio文件
+hive-3.1.2与hadoop-3.2.2、aws的相关jar包依赖，主要分为以下部分：
+
+复制代码
+```
+aws-java-sdk-1.12.363.jar
+aws-java-sdk-api-gateway-1.12.363.jar
+aws-java-sdk-bundle-1.12.363.jar
+aws-java-sdk-core-1.12.363.jar
+aws-java-sdk-s3-1.12.363.jar
+aws-lambda-java-core-1.2.2.jar
+com.amazonaws.services.s3-1.0.0.jar
+hadoop-aws-3.2.2.jar
+```
